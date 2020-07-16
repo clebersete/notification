@@ -2,8 +2,8 @@
 	require __DIR__.'/../lib_ext/autoload.php';
 
 	use notification\Email;
+	$email = new Email(2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls/ssl)", "port (587)", "from@email.com", "From Name");
 
-	$novoEmail = new Email(2, "smtp.gmail.com","carneirosete@gmail.com", "97853177", "tls", "587", "sete@gmail.com", "Equipe de Teste");
-	$novoEmail->sendMail("Assunto de Teste", "<p>Esse eh um e-mail de <b>teste</b>", "carneirosete@gmail.com", "Cleber Sete", "carneirosete@gmail.com", "Sete");
+	$email->sendEmail("SUbject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
 
 	var_dump($novoEmail);
